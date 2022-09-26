@@ -1,0 +1,25 @@
+/* li{
+    padding-left: 200px;
+    padding-top: 0px;
+} */
+
+  ul {
+    list-style-type: none;
+}
+
+#navlink{
+    padding-top: 25%;
+}
+
+.maintopoption1{
+    padding-left: 650px;
+    padding-top: 15px;
+}
+.maintopoption2{
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+#title{
+    padding-left: 50px;
+}

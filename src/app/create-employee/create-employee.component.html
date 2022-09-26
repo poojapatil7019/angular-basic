@@ -1,0 +1,17 @@
+<div class="col-lg-6 offset-sm-3 border border-info  rounded" id="createform">
+    <h3 class="text-center">ADD AN EMPLOYEE</h3>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit(employeeForm.value)">
+        <div class="form-group">
+            <label for="first-name">Name: </label>
+            <input class="form-control" id="first-name" type="text" formControlName="employeeName" placeholder="Your Name">
+        </div>
+        <div>
+            <label for="last-name">Email: </label>
+            <input class="form-control" id="last-name" type="text" formControlName="employeeEmail" placeholder="Your email">
+        </div>
+        <div>
+            <button class="btn btn-success offset-sm-5 mt-3" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
