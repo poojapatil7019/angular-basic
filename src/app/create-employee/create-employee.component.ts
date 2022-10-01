@@ -12,11 +12,11 @@ import { EmployeeService } from '../employee.service';
 })
 export class CreateEmployeeComponent implements OnInit {
   employee: Employee = new Employee();
-  employees: Employee[]=[];
+  employees: Employee[] = [];
   employeeForm!: FormGroup;
-  constructor(private employeeservice:EmployeeService,
-    private router: Router ) { }
-  
+  constructor(private employeeservice: EmployeeService,
+    private router: Router) { }
+
   ngOnInit(): void {
     this.employeeForm = new FormGroup({
       employeeName: new FormControl(''),
@@ -24,22 +24,22 @@ export class CreateEmployeeComponent implements OnInit {
     });
   }
 
-  saveEmployee(){
-    this.employeeservice.addEmployee(this.employee).subscribe(res=>
-      {
-        console.log(res);
-      }) 
-this.goToEmployeeList();
+  saveEmployee() {
+    this.employeeservice.addEmployee(this.employee).subscribe(res => {
+      console.log(res);
+    })
+    this.goToEmployeeList();
   }
 
-  onSubmit(form:FormGroup): void{
-    console.log(form.value.employeeName);
-    console.log(form.value.employeeEmail);
+  onSubmit(): void {
+    this.employee.employeeName = this.employeeForm.get('employeeName')?.value;
+    this.employee.employeeEmail = this.employeeForm.get('employeeEmail')?.value;
+
     console.log(this.employee);
     this.saveEmployee();
   }
 
-  goToEmployeeList(){
+  goToEmployeeList() {
     this.router.navigate(['/employees']);
   }
 }

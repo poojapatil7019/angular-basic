@@ -1,21 +1,32 @@
 <div class="col-md-8 offset-sm-2 border border-info  rounded" id="dataform">
 
-<table class="table">
-    <thead>
-        <tr>
-            
-            <th scope="col">Employee Id</th>
-            <th scope="col">Employee Name</th>
-            <th scope="col">Employee Email</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let employee of employees">
-            <td> {{ employee.employeeId }}</td>
-            <td> {{ employee.employeeName }}</td>
-            <td> {{ employee.employeeEmail }}</td>
-        </tr>
+    <table class="table">
+        <thead>
+            <tr>
 
-    </tbody>
-</table>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Employee Email</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td> {{ employee.employeeId }}</td>
+                <td> {{ employee.employeeName }}</td>
+                <td> {{ employee.employeeEmail }}</td>
+                <td>
+                    <button class="btn btn-info" (click)="updateEmployee(employee.employeeId)">Update</button>
+                </td>
+                <td>
+                    <button (click)="employeeDetails(employee.employeeId)" class="btn btn-info"
+                        style="margin-left: 10px"> View</button>
+                </td>
+                <td>
+                    <button class="btn btn-dark" (click)="deleteEmployee(employee.employeeId)">Delete</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </div>
